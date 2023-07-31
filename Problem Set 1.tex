@@ -146,5 +146,38 @@ Let's take reflection point $B$. Without loss of generality we show that ray $BE
 \end{itemize}
 
 \subsection{Problem 5}
+\begin{itemize}
+\item[a)] 
+$V = \frac{(10-t)^2}{5}$ \\ \\ 
+$\frac{\Delta V}{\Delta t} = \frac{V(0) - V(5)}{0 - 5} = \frac{20 - 5}{-5} = -3\; l/m$.
+
+\item[b)]
+$\frac{dV}{dt} = -\frac{2}{5}(10-t)$ \\ \\
+When $t = 5$, then $\frac{dV}{dt} = -2\; l/m$
+
+\subsection{Problem 6}
+
+\begin{itemize}
+\item[(19d)] 
+\[\lim_{x\to \infty}x\sin\ \frac{1}{x}\]
+\[x = \frac{1}{u}\]
+\[\lim_{u\to 0}\frac{\sin u}{u} = 1\]
+
+\item[(19f)]
+\[\lim_{x \to 0}\frac{\sin^2 x}{3x^2} = \lim_{x \to 0}\left[ \frac{1}{3}\frac{\sin x}{x}\frac{\sin x}{x} \right] = \frac{1}{3}\]
+\end{itemize}
+
+\subsection{Problem 7}
+\begin{itemize}
+\item[a)] 
+$D(uvw) = (uv)'w + uvw' = (u'v + uv')w + uvw' = u'vw + uv'w + uvw'$
+\item[b)]
+$D(u_1u_2 \dots\ u_n) = u_1'u_2 \dots un + u_1u_2' \dots u_n + u_1u_2 \dots u_n'$ \\ \\
+Let's prove that statement by induction. The base case is presented in $(a)$. Suppose that the guessed formula for $D(u_1u_2 \dots\ u_n)$ is true. We need to show that it's also true for $D(u_1u_2 \dots\ u_nu_{n+1})$. \\
+Let $w = u_1u_2 \dots\ u_n$. \\
+Now $D(wu_{n+1}) = w'u_{n+1} + wu_{n+1}' = (u_1'u_2 \dots un + u_1u_2' \dots u_n + u_1u_2 \dots u_n')u_{n+1} + (u_1u_2 \dots\ u_n)u_{n+1}' = u_1'u_2 \dots unu_{n+1} + u_1u_2' \dots u_nu_{n+1} + u_1u_2 \dots u_n'u_{n+1} + u_1u_2 \dots\ u_nu_{n+1}'$.
+\end{itemize}
+
+\end{itemize}
 
 \end{document}
