@@ -106,8 +106,54 @@ $y = 2(\sqrt{2}-1)(x-\sqrt{2})+1+(\sqrt{2}-1)^2 = (\sqrt{2}-1)2x$ \\
 $y = 2(-\sqrt{2}-1)(x+\sqrt{2})+1+(-\sqrt{2}-1)^2 = (-\sqrt{2}-1)2x$
 
 \item[(1C-6)]
-\item[(1B-2)]
-\item[(1C-1a)]
+Skipped
+\item[(1B-2)] $s = bt - 16t^2$
+\begin{itemize}
+\item[a)] $v = \frac{ds}{dt} = b - 32t$
+\item[b)] The maximum height when $v = 0$. So,
+\[ b - 32t = 0 \]
+\[ t = \frac{b}{32}\]
+\item[c)] The maximum height is $s(\frac{b}{32}) = \frac{b^2}{32} - \frac{b^2}{64} = \frac{b^2}{64}$
+\newpage
+\item[d)] The graphs of $v$ and $s$
+\begin{figure}[htp!]
+    \centering
+    \includesvg[width=\textwidth, height=10cm]{graph-5.svg}
+    \caption{The graph of $v$ (one bounce)}
+    \label{fig:fig5}
+\end{figure}
+\newpage
+\begin{figure}[htp!]
+    \centering
+    \includesvg[width=\textwidth, height=10cm]{graph-4.svg}
+    \label{fig:fig6}
+    \caption{The graph of $s$ (one bounce)}
+\end{figure}
+\newpage
+\item[e)] Let's take an initial velocity of the second bounce as $c$. Then $s = ct + 16t^2 \Rightarrow v = c + 32t$. So the maximum height of the second bounce is $\frac{c^2}{64}$. But we know that the maximum height of the second bounce is half of the first bounce, so $\frac{c^2}{64} = \frac{b^2}{64} \cdot \frac{1}{2} \Rightarrow c = \frac{b}{\sqrt{2}}$. That means that $v = \frac{b}{\sqrt{2} - 32t}$ and $s = \frac{b}{\sqrt{2}}t - 16t^2$.
+\begin{figure}[htp!]
+    \centering
+    \includesvg[width=\textwidth, height=10cm]{graph-6.svg}
+    \label{fig:fig7}
+    \caption{The graph of $v$ (two bounces)}
+\end{figure}
+\newpage
+\begin{figure}[htp!]
+    \centering
+    \includesvg[width=\textwidth, height=10cm]{graph-7.svg}
+    \label{fig:fig8}
+    \caption{The graph of $s$ (two bounces)}
+\end{figure}
+
+\item[f)] Let's examine the third bounce. If $d$ is initial velocity then it's maximum height is at time $t = \frac{d} {32}$ (starting from $0$) and its value is $\frac{d^2}{64}$, which is half of the second bounce $\frac{d^2}{64} = \frac{b^2}{128} \cdot \frac{1}{2} \Rightarrow d = \frac{b}{2}$. So the maximum height of third bounce is at time $t = \frac{b}{64}$ (starting from zero) and its value is $\frac{b^2}{256}$. The first bounce lasts $\frac{b}{16}$, the second bounce lasts $\frac{b}{16\sqrt{2}}$, the third lasts $\frac{b}{32}$ and so on. To get the time of the final landing of the ball we have to sum up all the times of individual landings of each bounce. This summation is geometric series as shown below.
+\[ S = (\frac{b}{16} + \frac{b}{16\sqrt{2}} + \frac{b}{32} + \dots)\]
+\[\frac{b}{16}\sum_{i = 0} ^\infty \left( \frac{1}{\sqrt{2}} \right)^i = \frac{b}{16} \cdot \frac{1}{1 - \frac{1}{\sqrt{2}}} \]
+
+\end{itemize}
+
+\item[(1C-1a)] The area of a disk is given by function $A(r) = \pi r^2$.
+\[ \lim_{\Delta r \to 0} \frac{dA}{dr} = \frac{A(r+\Delta r) - A(r)}{\Delta r} = \lim_{\Delta r \to 0} \frac{\pi(r+\Delta r)^2 - \pi r^2}{\Delta r} \]
+\[ = \lim_{\Delta r \to 0} \frac{\pi r^2 + 2 \pi r \Delta r + \pi \Delta r^2 - \pi r^2}{\Delta r} = \lim_{\Delta r \to 0} \left( 2 \pi r + \pi \Delta r \right) = 2\pi r  \]
 \end{itemize}
 
 \section{Part II}
