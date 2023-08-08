@@ -156,6 +156,123 @@ Skipped
 \[ = \lim_{\Delta r \to 0} \frac{\pi r^2 + 2 \pi r \Delta r + \pi \Delta r^2 - \pi r^2}{\Delta r} = \lim_{\Delta r \to 0} \left( 2 \pi r + \pi \Delta r \right) = 2\pi r  \]
 \end{itemize}
 
+\subsection{Lecture 2}
+
+\begin{itemize}
+\item[(1D-1)]
+\begin{itemize}
+    \item[(b)] $\lim_{x \to 2} \frac{4x}{x+1} = \frac{8}{3}$ 
+    \item[(c)] $\lim_{x \to -2} \frac{4x^2}{x+2} = undefined (\pm \infty)$
+    \item[(e)] $\lim_{x \to 2^-} \frac{4x^2}{2-x} = +\infty$
+    \item[(f)] $\lim_{x \to \infty} \frac{4x^2}{x-2} = +\infty$
+    \item[(g)] $\lim_{x \to \infty} \frac{4x^2}{x-2} - 4x = \lim_{x \to \infty} \frac{4x^2-4x^2+8x}{x-2} = \lim_{x \to \infty} \frac{8x}{x-2} = 8$  
+\end{itemize}
+\item[(1D-4a)] Skip
+\item[(1C-2)] $\lim_{x \to a} \frac{(x-a)g(x) - (a - a)g(a)}{x-a} = g(x)$
+\item[(1D-3)]
+\begin{itemize}
+    \item[(a)] $f(x) = \frac{x-2}{x^2-4}$. The point of discontinuity is $2$ since $f(2)$ is undefined. The type of discontinuity is Removable Discontinuity since $\lim_{x \to 2} f(x) = \frac{1}{4}$.
+    \item[(d)] 
+    \[f(x)=
+    \left\{
+      \begin{array}{ll}
+      x+a, & x > 0 \\
+      a-x, & x < 0 \\
+      \end{array} 
+      \right.
+    \]
+    The point of discontinuity is $0$ since $f(x)$ is undefined at $x = 0$. The type of discontinuity is Removable Discontinuity. 
+    \item[(e)]
+    \[f(x)=
+    \left\{
+      \begin{array}{ll}
+      1, & x > 0 \\
+      -1, & x < 0 \\
+      \end{array} 
+      \right.
+    \]
+    The point of discontinuity is $0$. The type of discontinuity is Jump Discontinuity.    
+\end{itemize}
+
+\item[(1D-6a)]
+\[f(x)=
+    \left\{
+      \begin{array}{ll}
+      x^2+4x+1, & x \geq 0 \\
+      ax+b, & x < 0 \\
+      \end{array} 
+      \right.
+    \]
+Continuity implies that $\lim_{x \to 0} f(x) = f(0)$.\\
+So $f(0) = 1$ and $\lim_{x \to 0^+} x^2+4x+1 = 1$ and  $\lim_{x \to 0^-} ax + b = b \Rightarrow b = 1$. \\ 
+Differentiability implies that $f'(0^+) = f'(0^-)$. \\
+So $f'(x)_{x \geq 0} = 2x+4 \Rightarrow f'(0^+) = 4$ and  $f'(x)_{x < 0} = a \Rightarrow f'(0^-) = a \Rightarrow a = 4$. \\
+So if $f(x)$ is \emph{continuous} and \emph{differentiable} then $a \neq 4$ and $b = 1$.
+    
+\item[(1D-8a)]  
+    \[f(x)=
+    \left\{
+      \begin{array}{ll}
+      ax+b, & x > 0 \\
+      \sin 2x, & x \leq 0 \\
+      \end{array} 
+      \right.
+    \]
+Continuity implies that $\lim_{x \to 0} f(x) = f(0)$.\\
+So $f(0) = 0$ and $\lim_{x \to 0^-} \sin 2x = 0$ and  $\lim_{x \to 0^+} ax + b = b \Rightarrow b = 0$. \\ 
+Differentiability implies that $f'(0^-) = f'(0^+)$. \\
+So $f'(x)_{x \leq 0} = 2\cos 2x \Rightarrow f'(0^-) = 2$ and  $f'(x)_{x > 0} = a \Rightarrow f'(0^+) = a \Rightarrow a = 2$. \\
+So if $f(x)$ is \emph{continuous} and \emph{not differentiable} then $a \neq 2$ and $b = 0$.
+\end{itemize}
+
+\subsection{Lecture 3}
+\begin{itemize}
+\item[(1E-1)]
+\begin{itemize}
+    \item[(a)] $10x^9+15x^4+6x^2$
+    \item[(c)] 1/2
+\end{itemize}
+\item[(1E-2b)] $\frac{x^7}{7}+\frac{5x^6}{6}+x^4 + c$
+\item[(1E-3)] $y = x^3 + x^2 - x + 2$, $y' = 3x^2 + 2x - 1$. The slope of $y$ is horizontal when $y' = 0$. So,
+\[ 3x^2 + 2x - 1 = 0  \]
+\[ x_1 = 1/3 \] 
+\[ x_2 = -1 \]
+So points are $\left( \frac{1}{3}, \frac{49}{27} \right)$ and $(-1, 3)$.
+\item[(1E-4a)]
+\[f(x)=
+    \left\{
+      \begin{array}{ll}
+      ax^2+bx+4, & x \leq 0 \\
+      5x^5+3x^4+7x^2+8x+4, & x > 0 \\
+      \end{array} 
+      \right.
+    \]
+
+Continuity implies that $f(0) = \lim_{x \to 0} f(x)$. \\ \\
+$f(0) = 4$, $\lim_{x \to 0^-} ax^2 + bx + 4 = 4$, $\lim_{x \to 0^+} 5x^5+3x^4+7x^2+8x+4 = 4$. So $f(x)$ is continuous for all values of $a$ and $b$. \\ \\
+Differentiability implies that $f'(0^+) = f'(0^-)$.
+
+\[f'(x)=
+    \left\{
+      \begin{array}{ll}
+      2ax+b, & x \leq 0 \\
+      25x^4+12x^3+14x+8, & x > 0 \\
+      \end{array} 
+      \right.
+    \]
+
+So, $f'(0^+) = 8$, $f'(0^-) = b$. Hence, $b = 8$. The value of $a$ doesn't change the value of $f'(0^-)$. So $f(x)$ is continuous and differentiable when $a = \pm \infty$ and $b = 8$. 
+
+\item[(1E-5a)] $\left( \frac{x}{1+x} \right)' = \left( x \cdot (1+x)^{-1} \right)' = (1+x)^{-1} + (-1) \cdot x \cdot (1+x)^{-2}$ \\ \\ 
+$ = \frac{1}{1+x} - \frac{x}{(1+x)^2} = \frac{1}{(x+1)^2}$  
+
+\item[(1J-1e)] $ \left( \frac{\sin x}{x} \right)' = \left( \sin x \cdot x^{-1} \right)' = \frac{\cos x}{x} - \frac{\sin x}{x^2} = \frac{x\cos x - \sin x}{x^2}$
+
+\item[(1J-2)] Derivative of $\cos x$ at point $a$ is $(\cos x)'\left( a \right) = -\sin a$. \\
+On the other hand $(\cos x)'\left( a \right) = \lim_{x \to a}\frac{\cos x - \cos a}{x - a}$. \\ 
+If $a = \pi / 2$, then $(\cos x)'\left( \pi/2 \right)  = \lim_{x \to \pi/2}\frac{\cos x - 0}{x - \pi/2} = -\sin \pi/2 = -1$.
+
+\end{itemize}
 \section{Part II}
 \subsection{Problem 1}
 \[
