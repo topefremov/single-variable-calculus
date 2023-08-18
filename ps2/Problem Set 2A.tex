@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{amsmath}
+
+\title{Problem Set 2A}
+\author{Aleksandr Efremov}
+\date{August 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Part I}
+\subsection{Lecture 5}
+
+\begin{itemize}
+    \item[(1F-3)] $y = x^{1/n}$ \\ \\ 
+    $y^n = x$. \\ \\
+    $\frac{d}{dx}y^n = \frac{d}{dx}x \Rightarrow ny^{n-1}\frac{dy}{dx} = 1 \Rightarrow \frac{dy}{dx} = \frac{1}{ny^{n-1}} \Rightarrow \frac{1}{nx^{\frac{n-1}{n}}}$
+    
+    \item[(1F-5)] $\sin x + \sin y = 1/2$. We differentiate both sides to find $\frac{dy}{dx}$.
+    \[ \frac{d}{dx} (\sin y) = \frac{d}{dx} (1/2 - \sin x) \Rightarrow \cos y \frac{dy}{dx} = -\cos x \Rightarrow \frac{dy}{dx} = -\frac{\cos x}{\cos y} \]
+    The horizontal tangent lines are at points where $\frac{dy}{dx} = 0 \Rightarrow \cos x = 0, \cos y \neq 0$. $\cos x = 0$ when $x = \pm \frac{\pi}{2}$. \\ \\ If $x = \frac{\pi}{2}$, then,
+    \[ \sin y = 1/2 - \sin \frac{\pi}{2} \Rightarrow \sin y = -1/2 \Rightarrow y = \frac{7\pi}{6}, \frac{11\pi}{6} \]
+    If $y = \frac{7\pi}{6}, \frac{11\pi}{6}$, then $\cos y \neq 0$, so points where $x = \frac{\pi}{2} + 2 \pi i$ and $y = \frac{7\pi}{6} + 2 \pi j, \frac{11\pi}{6} + 2 \pi j$ fit. \\ \\ If $x = -\frac{\pi}{2}$, then,
+    \[ \sin y = 1/2 - \sin -\frac{\pi}{2} \Rightarrow \sin y = 3/2 \Rightarrow y = undefined \]
+    Then the only solutions left are points $\left( \frac{\pi}{2} + 2 \pi i, \frac{7\pi}{6} + 2 \pi j \right)$ and $\left( \frac{\pi}{2} + 2 \pi i, \frac{11\pi}{6} + 2 \pi j \right)$ for any integers $i, j$. 
+    
+    \item[(1F-8c)] $c^2 = a^2 + b^2 - 2ab \cos \theta$. $c, \cos \theta$ are constants.
+    \[ \frac{d}{db}(c^2) = \frac{d}{db}(a^2 + b^2 - 2ab \cos \theta) \Rightarrow 0 = 2a \frac{da}{db} + 2b - 2 \cos \theta \left( \frac{da}{db}b + a \right) \Rightarrow \frac{da}{db} = \frac{a \cos \theta - b}{a - b \cos \theta} \]
+
+    \item[(1A-5b)] $f(x) = x^2 + 2x$
+    \[ y = x^2 + 2x \Rightarrow y + 1 = (x+1)^2  \Rightarrow x = \pm \sqrt{y+1} - 1 \]
+    Since this function is even it has no inverse function. But if we take the domain of function to be $[-1, \infty]$ then the inverse function $g(x) = \sqrt{x+1} - 1$. The sketch is skipped.
+    
+    \item[(5A-1a)] $\tan^{-1}{\sqrt{3}} = \theta \Rightarrow \theta = \frac{\pi}{3}$
+    
+    \item[(5A-1b)] $\sin^{-1}{\frac{\sqrt{3}}{2}} = \theta \Rightarrow \theta = \frac{\pi}{3}$
+
+    \item[(5A-1c)] If $\theta = \tan^{-1} 5$, then $\tan{\theta} = 5 \Rightarrow \tan{\theta} = \frac{opp}{adj} \Rightarrow hyp = \sqrt{26}$. \\ Then $\sin{\theta} = \frac{opp}{hyp} = \frac{5}{\sqrt{26}}$, $\cos{\theta} = \frac{adj}{hyp} = \frac{1}{\sqrt{26}}$, $\sec{\theta} = \frac{1}{\cos{\theta}} = \sqrt{26}$
+
+    \item[(5A-3f)] If $\theta = \sin^{-1}{(a/x)}$, then $\sin \theta = a/x \Rightarrow \frac{d}{dx}(\sin \theta) = \frac{d}{dx} (a/x)$ \\ \\ = $\cos \theta \frac{d\theta}{dx} = -\frac{a}{x^2} \Rightarrow \frac{d\theta}{dx} = -\frac{a}{x\sqrt{x^2-a^2}}$
+
+    \item[(5A-3h)] If $\theta = \sin^{-1}{(\sqrt{1-x})}$, then $\sin \theta = \sqrt{1-x} \Rightarrow \frac{d}{dx}(\sin \theta) = \frac{d}{dx} (\sqrt{1-})$ \\ \\ = $\cos \theta \frac{d\theta}{dx} = -\frac{1}{2\sqrt{1-x}} \Rightarrow \frac{d\theta}{dx} = -\frac{1}{2\sqrt{x(1-x)}}$
+\end{itemize}
+
+\subsection{Lecture 6}
+\begin{itemize}
+    \item[(1H-1)] The amount will decrease to $1/2$ of the initial amount when $e^{kt} = 1/2$. Solving for $t$ we find $\lambda$. So, $e^{kt} = 1/2 \Rightarrow t = -\frac{\ln 2}{k} \Rightarrow \lambda = -\frac{\ln 2}{k}$. \\ \\
+    If $y(t_1) = y_1 = y_0e^{kt_1}$, then $y(t_1+\lambda) = y_0e^{k(t_1+\lambda)} = y_0e^{kt_1} \cdot e^{k\lambda} = y_1e^{-\ln 2} = y_1/2$
+
+    \item[(1H-2)] Skipped
+
+    \item[(1H-3a)] 
+    \[ \ln(y-1)+\ln(y-1) = 2x + \ln{x}\]
+    \[ (y-1)(y+1) = xe^{2x} \]
+    \[ y^2 = xe^{2x} + 1 \]
+    Since $y > 1$, $y = \sqrt{xe^{2x} + 1}$
+
+    \item[(1H-5b)] $y = e^x - e^{-x}$, let $u = e^x$, then $y = u + 1/u \Rightarrow u^2-uy+1 = 0$. Solve for $u$.
+    \[ u = \frac{y \pm \sqrt{y^2-4}}{2}\]
+    \[ e^x =  \frac{y \pm \sqrt{y^2-4}}{2} \]
+    \[ x = \ln \left( \frac{y \pm \sqrt{y^2-4}}{2} \right) \]
+
+    \item[(1I-1c)] $\frac{d}{dx} \left( e^{-x^2} \right) = -2xe^{-x^2}$
+
+    \item[(1I-1d)] $\frac{d}{dx} \left( x \ln{x} - x \right) = \ln{x} + 1 - 1 = \ln{x}$
+
+    \item[(1I-1e)] $\frac{d}{dx} \left( \ln{(x^2)} \right) = \frac{1}{x^2} \cdot 2x = \frac{2}{x}$
+
+    \item[(1I-1f)] $\frac{d}{dx} \left( (\ln{x})^2 \right) =  \frac{2 \ln{x}}{x}$
+
+    \item[(1I-1m)] $\frac{d}{dx} \left( \frac{1-e^x}{1+e^x} \right) = \frac{-e^x(1+e^x)-e^x(1-e^x)} {(1+e^x)^2} = \frac{-2e^x}{(1+e^x)^2}$
+
+    \item[(1I-4a)] 
+    \[ \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^{3n} = \lim_{n \to \infty} \left( \left( 1 + \frac{1}{n} \right)^n \right)^3 = e^3 \]
+\end{itemize}
+
+\subsection{Lecture 7}
+\begin{itemize}
+    \item[(5A-5a)] $y = \sinh{x} = \frac{1}{2} \left( e^x - e^{-x} \right)$. The function is $odd$, so it's symmetric about the origin. It has no critical points, since $\frac{d}{dx} \sinh{x} = \cosh{x} > 0$. The only point of inflection is $0$, because $\frac{d^2}{dx^2} \sinh{x} = \sinh{x}$ and it equals to $0$ only when $x = 0$. The function is concave up when $x > 0$ and concave down when $x < 0$. If $x \to \infty$ then $\sinh{x} \to \infty$, because $\lim_{x \to \infty} \frac{1}{2} \left( e^x - e^{-x} \right) = \infty - 0 = \infty$. If $x \to -\infty$ then $\sinh{x} \to -\infty$, because $\lim_{x \to -\infty} \frac{1}{2} \left(e^x - e^{-x} \right) = 0 - \infty = -\infty$.
+
+    \begin{figure}[htp!]
+    \centering
+    \includesvg{ps2-graph-1.svg}
+    \label{fig:fig1}
+    \end{figure}
+    
+    \item[(5A-5b)] $\sinh^{-1}{x} = y$. That means $\sinh{y} = x$. We can solve this equation for $y$.
+
+    \[ \frac{1}{2} \left( e^y - e^{-y} \right) = x \]
+    Put $u = e^y$ and solve for $u$ first.
+
+    \[ \left( u - \frac{1}{u} \right) = 2x\]
+    \[ u^2 - 2xu - 1 = 0\]
+    \[ u = \frac{2x \pm \sqrt{4x^2+4}}{2} = x \pm \sqrt{x^2+1} \]
+    \[ e^y = x \pm \sqrt{x^2+1} \]
+
+    The only suitable definition  $e^y = x + \sqrt{x^2 + 1}$ because $x - \sqrt{x^2+1} < 0$ and $e^y > 0$. So $y = \ln{\left( x + \sqrt{x^2 + 1} \right)}$, domain is a whole $x$ axis. 
+
+    \begin{figure}[htp!]
+    \centering
+    \includesvg{ps2-graph-2.svg}
+    \label{fig:fig1}
+    \end{figure}
+
+    \item[(5A-5c)] 
+    \[ \frac{d}{dx} \sinh^{-1}{x} = \frac{d}{dx} \left( \ln{\left( x + \sqrt{x^2 + 1} \right)}  \right) \]
+    \[ = \frac{1}{x + \sqrt{x^2 + 1}} \cdot \left( 1 + \frac{x}{\sqrt{x^2+1}} \right) = \frac{1}{\sqrt{x^2+1}} \]
+
+\end{itemize}
+\section{Part II}
+\subsection{Problem 0}
+Skipped
+\subsection{Problem 1}
+Skipped
+\subsection{Problem 2}
+\begin{itemize}
+    \item[a)] 
+    \[ \frac{d}{dx}{\tan^3{x^4}} \]
+    Put $v = x^4$ and $u = \tan{(v)}$. Then $\frac{dv}{dx} = 4x^3$ and $\frac{du}{dx} = \sec^2{(v)} 
+    \cdot \frac{dv}{dx} = 4x^3\sec^2{(x^4)}$. Then,
+
+    \[ \frac{d}{dx} u^3 = 3u^2 \cdot \frac{du}{dx} = 12x^3 \tan^2{(x^4)} \sec^2{(x^4)}\]
+
+    \item[b)] $\frac{d}{dx} \left( \sin^2{y} \cos^2{y} \right)$. First using product rule,
+    \[ \frac{d}{dx} \left( \sin^2{y} \cos^2{y} \right) = 2\sin{y} \cos^3{y} - 2 \cos{y} \sin^3{y} = (2 \sin{y} \cos{y})(\cos^2{y}-\sin^2{y})\]
+    \[ = \sin{(2y)} \cos{(2y)} = \frac{\sin{(4y)}}{2}\]
+
+    Now rewrite the initial function as $f(2y)$. \[ \sin^2{y}\cos^2{y} = \frac{1 - \cos{(2y)}}{2} \cdot \frac{1 + \cos{(2y)}}{2} = \frac{1 - \cos^2{(2y)}}{4} \]
+    So $f(y) = \frac{1 - \cos^2{y}}{4}$. Now solve $\frac{d}{dx}f(2y)$.
+    \[ \frac{d}{dx} \left( \frac{1 - \cos^2{(2y)}}{4} \right) = 0 - \frac{1}{4} \cdot 2\cos{(2y)} \cdot (-\sin{(2y)})\cdot 2 = \cos{(2y)}\sin{(2y)} = \frac{\sin{(4y)}}{2}\]
+    
+\end{itemize}
+
+\subsection{Problem 3}
+Skipped
+
+\subsection{Problem 4}
+\begin{itemize}
+    \item[a)] $\cos^{-1}x = y \Rightarrow \cos{y} = x \Rightarrow \sin{y} = \sqrt{1 - x^2}$. Using implicit differentiation, 
+    \[ \frac{d}{dx} \cos{y} = \frac{d}{dx} x\]
+    \[ -\sin{y} \cdot \frac{dy}{dx} = 1\]
+    \[ \frac{dy}{dx} = \frac{1}{-\sin{y}} = -\frac{1}{\sqrt{1 - x^2}} \]
+
+    \item[b)] If we look at the graphs of the functions $y = \cos^{-1}x$ and $y = \sin^{-1}x$, we will see that their slopes at any point $-1 \leq x \leq 1$ have opposite values. That's why $\frac{d}{dx} \cos^{-1}x + \frac{d}{dx} \sin^{-1}x = 0$.
+\end{itemize}
+
+\subsection{Problem 5}
+\subsubsection{Section 8.2/8}
+\begin{itemize}
+    \item[a)] The formula for $M$ is $M = \frac{2}{3}\log_{10}{\frac{E}{E_0}}$. We need to solve for $E$,
+    \[ \frac{3}{2}M = \log_{10}{\frac{E}{E_0}} \]
+    Rewrite as an exponential exponential equation,
+    \[ 10^{3/2M} = \frac{E}{E_0} \]
+    Then, 
+    \[ E = 10^{3/2M}E_0 \]
+    Now let $E_s$ be the energy of the smaller earthquake and $E_l$ be the energy of the larger earthquake. Suppose that the magnitude of the smaller earthquake is equal to $M$, then the magnitude of the larger earthquake is equal to $M+1$. Then, 
+    \[ \frac{E_l}{E_s} = \frac{10^{3/2(M+1)}E_0}{10^{3/2M}E_0} = 10^{3/2} \]
+
+    \item[c)] The earthquake of magnitude 6 releases energy equal to $E = 10^{\frac{3}{2} \cdot 6} \cdot 10^{-3} \cdot 7 = 7 \times 10^6$ kilowatthours. So, $\frac{7 \times 10^6}{3 \times 10^5} \approx 23$ days' supply could be provided by this earthquake.  
+\end{itemize}
+
+\subsubsection{Section 8.2/10}
+Proof that $\log_{3}{2}$ is \textit{irrational}. Assume for the purpose of contradiction that $\log_{3}{2}$ is \textit{rational}. Then,
+\[ \log_{3}{2} = \frac{p}{q} \]
+Where $p$ and $q$ are positive integers and $\frac{p}{q}$ is in lowest form and $q > 0$. Then,
+\[ \log_{3}{2^q} = p \]
+Rewrite as an exponential equation,
+\[ 2^q = 3^p \]
+This is a contradiction. Hence, $\log_{3}{2}$ is \textit{irrational}.
+
+\subsubsection{Section 8.2/11}
+There is a flaw in multiplying by $\log\frac{1}{2}$ because it's a negative value. When multiplying by negative value the sign of inequality must be changed.
+
+\subsubsection{8.4/18}
+\[ \ln{y} = \frac{1}{3} \left[ \ln{(x+1)} + \ln{(x-2)} + \ln{(2x+7)} \right] \]
+\[ \frac{1}{y} \frac{dy}{dx} = \frac{1}{3} \left[ \frac{1}{x+1} + \frac{1}{x-2} + \frac{2}{2x+7} \right] \]
+
+\[ \frac{dy}{dx} = \frac{\sqrt[3]{(x+1)(x-2)(2x+7)}}{3} \left[ \frac{1}{x+1} + \frac{1}{x-2} + \frac{2}{2x+7} \right] \]
+
+\subsubsection{8.4/19a}
+\[ y = \frac{e^x(x^2-1)}{\sqrt{6x-2}}\]
+\[ \ln{y} = x + \ln{(x^2-1)} - \frac{1}{2} \ln{(6x-2)} \]
+\[ \frac{1}{y} \frac{dy}{dx} = 1 + \frac{2x}{x^2-1} - \frac{3}{6x-2} \]
+\[ \frac{dy}{dx} = \left( 1 + \frac{2x}{x^2-1} - \frac{3}{6x-2} \right) \left( \frac{e^x(x^2-1)}{\sqrt{6x-2}} \right) \]
+
+\subsection{Problem 6}
+Let $w = u_1u_2 \dots u_n$, then we need to find $w'$.
+\[ \ln{w} = \ln{u_1} + \ln{u_2} + \dots + \ln{u_n}\]
+\[ \frac{w'}{w}  = \frac{u_1'}{u_1} + \frac{u_2'}{u_2} + \dots + \frac{u_n'}{u_n} \]
+
+\[ w' = u_1'u_2 \dots u_n + u_1u_2' \dots u_n + u_1u_2 \dots u_n' \]
+
+\end{document}
