@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{amsmath}
+
+\title{Problem Set 2B}
+\author{Aleksandr Efremov}
+\date{August 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Part I}
+\subsection{Lecture 9}
+\subsubsection{2A-2}
+
+$f(x) = \frac{1}{a+bx}$, $f'(x) = -\frac{b}{(a+bx)^2}$. So, by using $(2)$ linear approximation for $f(x)$ at $x \approx 0$,
+\[ f(x) \approx f(0) + f'(0)(x-0) = \frac{1}{a} - \frac{bx}{a^2} \]
+or, by using the basic approximation formula $(5)$,
+\[ f(x) = \frac{1}{a+bx} = (a+bx)^{-1} = \frac{1}{a} \left( 
+1+\frac{bx}{a} \right)^{-1} \approx \frac{1}{a} \left( 1 - \frac{bx}{a} \right) = \frac{1}{a} - \frac{bx}{a^2} \]
+
+\subsubsection{2A-3}
+$f(x) = \frac{(1+x)^{3/2}}{1+2x}$. By using basic approximation formulas $(5)$ and then $(4)$,
+\[ \frac{(1+x)^{3/2}}{1+2x} \approx \frac{1+3x/2}{1+2x} \approx (1+3x/2)(1-2x) \approx 1 - 2x + 3x/2  = \frac{2-x}{2}\]
+
+Or, by using $(2),$
+\[ f'(x) = \frac{3/2(1+2x)^{3/2}(1+x)^{1/2}-2(1+x)^{3/2}}{(1+2x)^2} \]
+
+\[ f(x) \approx f(0) + f'(0)x = 1 - \frac{x}{2} = \frac{2-x}{2}\]
+
+\subsubsection{2A-7}
+
+\[ f(x) = \frac{\sec{x}}{\sqrt{1-x^2}} = \sec{x} \cdot (1-x^2)^{-1/2} \approx \left( 1+\frac{x^2}{2} \right) \cdot (1-x^2)^{-1/2} \approx \left( 1+\frac{x^2}{2} \right) \cdot \left(1+\frac{x^2}{2} \right) \approx 1+x^2 \]
+
+\subsubsection{2A-11}
+\[ p = \frac{C}{v^k} = C \cdot v^{-k} = C \cdot (v_0 + \Delta v)^{-k} = \frac{C}{v_0^k} \left( 1 + \frac{\Delta v}{v_0} \right)^{-k} \]
+\[ \approx \frac{C}{v_0^k} \left( 1 - k\frac{\Delta v}{v_0} + \frac{k(k+1)}{2} \left( \frac{\Delta v}{v_0} \right)^2 \right) \]
+
+\subsubsection{2A-12a}
+\[ \frac{e^x}{1-x} \approx (1+x+x^2/2)(1+x+x^2) \approx 1 + 2x + \frac{5x^2}{2}  \]
+
+\subsubsection{2A-12d}
+\[ \ln{(\cos x)} \approx \ln{(\cos0) - \tan{0}\cdot x - \frac{\sec^2{0}}{2} \cdot x^2} = -\frac{x^2}{2} \]
+
+\subsubsection{2A-12e}
+Put $x = 1+h$.
+\[ (1+h)\ln{(1+h) \approx (1+h)\left( h - \frac{h^2}{2} \right)} \approx h + \frac{h^2}{2} = (x-1) + \frac{(x-1)^2}{2} \]
+
+\newpage
+\subsection{Lecture 10}
+\subsubsection{2B-1a}
+$y = x^3 -3x + 1$, $y' = 3x^2-3$, the critical points at $x = \pm 1$. The \textit{y-intercept} is $1$.  The function goes to $\infty$ as $x \to \infty$, and to $-\infty$ as $x \to -\infty$.
+
+\begin{figure}[htp!]
+    \centering
+    \includesvg{ps2b-graph1.svg}
+    \label{fig:fig1}
+\end{figure}
+
+\newpage
+\subsubsection{2B-1e}
+$y = \frac{x}{x+4}$, $y' = \frac{4}{(x+4)^2}$, the function has no critical points. The vertical asymptote at $x = -4$ since the function is undefined at that point. The function goes to $\infty$ as $x \to 4^{-}$, to $-\infty$ as $x \to 4^{+}$ and to $1$ as $x \to \pm \infty$.
+
+\begin{figure}[htp!]
+    \centering
+    \includesvg{ps2b-graph2.svg}
+    \label{fig:fig2}
+\end{figure}
+
+\newpage
+\subsubsection{2B-1h}
+$y = e^{-x^2}$, $y' = -2xe^{-x^2}$. The only critical point is at $x = 0$. The \textit{y-intercept} is $1$. The function goes to $0$ as $x \to \pm \infty$.
+
+\begin{figure}[htp!]
+    \centering
+    \includesvg{ps2b-graph3.svg}
+    \label{fig:fig3}
+\end{figure}
+\subsubsection{2B -2a} The inflection point is at $x = 0$.
+\subsubsection{2B-2e} No inflection points
+\subsubsection{2B-2h} The critical points is at $x = \pm \frac{1}{\sqrt{2}}$
+
+\newpage
+\subsubsection{2B-4}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{ps2b-graph4.svg}
+    \label{fig:fig4}
+\end{figure}
+We can't say exact values of the maximum and minimum, but we know that the maximum is attained at point $x = 5$ or $x = 10$, and the minimum is attained at point $x = 0$ or $x = 8$.
+
+\subsubsection{2B-6a} $y = x^3 + 3x$.
+
+\newpage
+\subsubsection{2B-6b}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{ps2b-graph5.svg}
+    \label{fig:fig5}
+\end{figure}
+
+
+\subsubsection{2B-7a}
+$f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}$. Let $\Delta y = f(x) - f(a)$ and $\Delta x = x - a$. Then $f'(a) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$. If $f(x)$ is increasing, then,
+\[ \Delta x > 0 \Rightarrow \Delta y > 0 \Rightarrow 
+ \frac{\Delta y}{\Delta x} > 0 \Rightarrow f'(a) \geq 0 \]
+\[ \Delta x < 0 \Rightarrow \Delta y < 0 \Rightarrow 
+ \frac{\Delta y}{\Delta x} > 0 \Rightarrow f'(a) \geq 0 \]
+In both cases $f'(a) \geq 0$.
+
+\subsubsection{2B-7b} The flaw is in statement $\frac{\Delta y}{\Delta x} \Rightarrow f'(a) > 0$, because any positive function has a limit $\geq 0$, not $> 0$. As a counterexample consider $f(x) = x^3$. This function is increasing for all $x$, but $f'(0) = 0$.
+
+\section{Part II}
+\subsection{Problem 1}
+\begin{itemize}
+    \item[a)] Consider a section of the sphere shown below.
+    \begin{figure}[htp!]
+      \centering
+      \includesvg[width = 15cm, height = 15cm]{sphere_cap.svg}
+      \label{fig:fig6}
+    \end{figure}
+    \\ \\So, $h = R - \sqrt{R^2 - r^2}$. Hence, the formula for the area of the cap is $2 \pi R \left( R - \sqrt{R^2-r^2} \right)$
+    \item[b)] Area of the cap = $2 \pi R \left( R - \sqrt{R^2-r^2} \right) = 2 \pi R^2 \left( 1 - \left(1- \left( \frac{r}{R} \right)^2\right)^\frac{1}{2} \right)$. \\ Using linear approximation to the function $(1+x)^\frac{1}{2}$, where $x = -\left(\frac{r}{R}\right)^2$
+    \[ 2 \pi R^2 \left( 1 - \left(1+ x\right)^\frac{1}{2} \right) \approx 2 \pi R^2 \left( 1 - \left(1 + \frac{1}{2}x\right) \right) = 2 \pi R^2 \left( \frac{r^2}{2R^2} \right) = \pi r^2 \]
+    Using quadratic approximation to the function $(1+x)^\frac{1}{2}$, where $x = -\left(\frac{r}{R}\right)^2$
+    \[ 2 \pi R^2 \left( 1 - \left(1+ x\right)^\frac{1}{2} \right) \approx 2 \pi R^2 \left( 1 - \left(1 + \frac{1}{2}x - \frac{1}{8}x^2\right) \right) = 2 \pi R^2 \left( -\frac{1}{2}x + \frac{1}{8}x^2 \right) \]
+    \[ = 2 \pi R^2 \left( \frac{r^2}{2R^2} + \frac{r^4}{8R^4} \right) = \pi r^2+ \frac{\pi r^4}{4R^2} \]
+
+    \item[c)] Let $R$ be the radius of the ball and $r$ be the radius of a dimple. The area of the ball is $4 \pi R^2$. When a dimple is inserted some area is removed from the golf ball and an area equal to $2\pi r^2$ is added.
+    \begin{itemize}
+        \item[i)] If we consider the removed surface to be flat than the area removed would be equal to $\pi r^2$. Inserting $100$ dimples into the ball we get the area of the ball equal to $4 \pi R^2 - 100 \pi r^2 + 200 \pi r^2$. The area of the removed surface is equal to the linear approximation from part $(b)$.
+        \item[ii)] According to the quadratic approximation from part $(b)$ the area of the removed surface is $\pi r^2 + \frac{\pi r^4}{4R^2}$. Inserting $100$ dimples into the ball we get the area of the ball equal to $4 \pi R^2 - 100 \pi r^2 - \frac{25\pi r^4}{R^2} + 200 \pi r^2$.
+        \item[iii)] The exact formula for the removed surface is $2 \pi R \left(R - \sqrt{R^2 - r^2}\right)$. Inserting $100$ dimples into the ball we get the area of the ball equal to $4 \pi R^2 - 100\left(2 \pi R \left(R - \sqrt{R^2 - r^2}\right)\right) + 200 \pi r^2$. 
+    \end{itemize}
+    Calculate using $\pi \approx 3.14$. For part $(i)$ the area of the ball is $ \approx 35.33$. For part $(ii)$ the area is $\approx 35.31$. For part $(iii)$ the area is $\approx 35.31$. Thus, the quadratic approximation is more accurate and the consideration that the removed area is flat gives wrong answer according to the rules.
+\end{itemize}
+\subsection{Problem 2}
+Skipped
+
+\end{document}
