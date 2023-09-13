@@ -388,19 +388,23 @@ where \(\frac{x^2+1}{x^2-1}\) is even and \(\frac{-2x}{x^2-1}\) is odd
 \begin{itemize}
     \item[a)] 
 \[h_0 = 25000, L_0 = \sqrt{25000^2-20000^2} = 15000\]
-\[\Delta h = 1, h = 25001, L = \sqrt{25001^2-20000^2} \approx 15001.667, \Delta L = 1.667, \frac{\Delta L}{\Delta h} = \frac{1.667}{1} = 1.667\]
-\[\Delta h = 10^{-1}, h = 25000.1, L = \sqrt{25000.1^2-20000^2} \approx 15000.167, \Delta L = 0.167, \frac{\Delta L}{\Delta h} = \frac{0.167}{0.1} = 1.67\]
-\[\Delta h = 10^{-2}, h = 25000.01, L = \sqrt{25000.01^2-20000^2} \approx 15000.017, \Delta L = 0.017, \frac{\Delta L}{\Delta h} = \frac{0.017}{0.01} = 1.7\]
-
-An estimate for $L$ is $|L-L_0| = |\Delta L| \leq 1.7|\Delta h|$
+\[\Delta h = 1, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(25000\pm1)^2-20000^2} - 15000}{(25000\pm1)-25000} \approx 1.67 \]
+\[\Delta h = 10^{-1}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(25000\pm0.1)^2-20000^2} - 15000}{(25000\pm0.1)-25000}
+\approx 1.67 \]
+\[\Delta h = 10^{-2}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(25000\pm0.01)^2-20000^2} - 15000}{(25000\pm0.01)-25000}
+\approx 1.67 \]\textbf{}
+An estimate for $L$ is $|L-L_0| = |\Delta L| \leq 2|\Delta h|$
 
     \item[b)]
-\[h_0 = 20001, L_0 = \sqrt{20001^2-20000^2} \approx 200.002\]
-\[\Delta h = 1, h = 20002, L = \sqrt{20002^2-20000^2} \approx 282.85, \Delta L = 82.848, \frac{\Delta L}{\Delta h} = \frac{82.848}{1} = 82.848\]
-\[\Delta h = 10^{-1}, h = 20001.1, L = \sqrt{20001.1^2-20000^2} \approx 209.765, \Delta L = 9.763, \frac{\Delta L}{\Delta h} = \frac{9.763}{0.1} = 97.63\]
-\[\Delta h = 10^{-2}, h = 20001.01, L = \sqrt{20001.01^2-20000^2} \approx 201, \Delta L = 0.998, \frac{\Delta L}{\Delta h} = \frac{0.998}{0.01} = 99.8\]
+\[h_0 = 20001, L_0 = \sqrt{20001^2-20000^2}\]
+\[\Delta h = 1, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001+1)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001+1)-20001} \approx 82.85 \]
+\[\Delta h = 1, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001-1)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001-1)-20001} \approx 200 \]
+\[\Delta h = 10^{-1}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001+0.1)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001+0.1)-20001} \approx 97.62 \]
+\[\Delta h = 10^{-1}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001-0.1)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001-0.1)-20001} \approx 102.64 \]
+\[\Delta h = 10^{-2}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001+0.01)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001+0.01)-20001} \approx 99.76 \]
+\[\Delta h = 10^{-2}, \frac{\Delta L}{\Delta h} = \frac{\sqrt{(20001-0.01)^2-20000^2} - \sqrt{20001^2-20000^2}}{(20001-0.01)-20001} \approx 100.25 \]
 
-An estimate for $L$ is $|L-L_0| = |\Delta L| \leq 100|\Delta h|$. The value is estimated less accurately that in part $(a)$.
+An estimate for $L$ is $|L-L_0| = |\Delta L| \leq 103|\Delta h|$. The value is estimated less accurately that in part $(a)$.
 \end{itemize}    
 \subsection{Problem 3}
 

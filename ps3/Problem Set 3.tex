@@ -1,0 +1,446 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+
+\title{Problem Set 3}
+\author{Aleksandr Efremov}
+\date{August 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Part I}
+\subsection{Lecture 11}
+\subsubsection{2C-1}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2C-1.svg}
+    \label{fig:fig1}
+\end{figure}
+The volume of the box is,
+\[ V = (12-2x)^2x \]
+We need to maximize $V$ with constraint $0 < x < 6$, since $V = 0$ at the endpoints $x = 0$ and $x = 6$. The derivative of $V$ is,
+\[ \frac{dV}{dx} = 12x^2 - 96x + 144 \]
+The critical points are at $x = 2$ and $x = 6$. Hence, the maximum $V$ is at $x = 2$.
+
+\subsubsection{2C-2}
+The length of the fence is given by the formula $L = 2x + y$, where $x$ and $y$ are sides of the rectangular area. The area is given by the equation $xy = 20000$. We need to minimize $L$. \\ \\
+First rewrite formula for $L$ in terms of $x$,
+\[ L =  2x + \frac{20000}{x}\]
+The minimum should be at some critical point between $0$ and $\infty$, since at the endpoints $x = 0$ and $x = \infty$ $L$ goes to $\infty$. The derivative of the function $L$ is,
+\[ \frac{dL}{dx} = 2 - \frac{20000}{x^2} \]
+The only critical point (greater than 0) is at $x = 100$. So the shortest length of the fence needed is $L = 400$.
+
+\subsubsection{2C-5}
+Let $r$ be the radius of the cylinder and $h$ be its height. The area of the cylinder is given by the formula $A = \pi r^2 + p \pi rh$. The volume of the cylinder is given by the formula $V = \pi r^2 h$. We need to maximize $V$. First we find $h$ in terms of $r$,
+\[ h = \frac{A-\pi r^2}{2 \pi r}\]
+Then plug $h$ into the formula for $V$,
+\[ V = \pi r^2 \left( \frac{A - \pi r^2}{2 \pi r} \right) = \frac{1}{2} \left( Ar - \pi r^3 \right)\]
+We have two endpoints $r = 0$ and $r = \infty$. At $r = 0$ the volume $V = 0$, and at $r = \infty$ the volume $V = -\infty$. Hence, the maximum must be at critical points.
+\[ \frac{dV}{dr} = \frac{1}{2}\left(A-3\pi r^2 \right) \]
+$\frac{dV}{dr} = 0$ at $r = \sqrt{\frac{A}{3\pi}}$, then,
+\[ h = \frac{A - \pi \frac{A}{3\pi}}{2\pi\sqrt{\frac{A}{3\pi}}} = \frac{A}{3\pi \sqrt{\frac{A}{3\pi}}} = \frac{A}{\sqrt{3\pi A}} = \sqrt{\frac{A}{3\pi}} \]
+Hence, the maximum volume is when $r = h$.
+
+\newpage
+\subsubsection{2C-11}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2C-11.svg}
+    \label{fig:fig2}
+\end{figure}
+We need to maximize $S = cxy^3$, where $c$ is a constant. At the endpoints $x = 0$ or $y = 0$ the strength $S$ is also zero. Hence, the maximum must be at critical points when $S' = 0$. We can express $S$ as a function of $x$ and treat $y$ as an implicit function of $x$. So, 
+\[\frac{dS}{dx} = c\left(y^3+3xy^2\frac{dy}{dx}\right)\] 
+From the picture above we got the equation,
+\[ \frac{1}{4} \left(x^2 + y^2\right) = r^2 \]
+\[ x^2 + y^2 = 4r^2 \]
+Differentiating both sides we get,
+\[ \frac{dy}{dx} = -\frac{x}{y} \]
+Hence,
+\[ \frac{dS}{dx} = 0 \Rightarrow y^3 + 3xy^2\left( -\frac{x}{y} \right) = 0 \Rightarrow \frac{y}{x} = \sqrt{3} \]
+
+\subsubsection{2C-13a}
+Let $R$ be the total revenue the company gets and $x$ denotes some increase or decrease in the fare and passengers. The total revenue equals to the product of the number of passengers and the fare per ticket. Then,
+\[ R = (100-2x)(200+5x) \]
+The function goes to $-\infty$ at the ends. So, the maximums must be in between at the critical point. $\frac{dR}{dx} = -20x + 100$. So, the critical point is at $x = 5$, and therefore the price that maximizes the revenue is $225$\$
+
+\subsubsection{2C-13b}
+Let $P$ be the profit the company gets. The profit equals to the product of the amount of kilowatt hours consumed and the price per kilowatt hour. Then,
+\[ P = \left( 10-\frac{x}{10^5} \right) \left( 10^5 \left( 10 - \frac{p}{2} \right) \right) \]
+Notice that the price per kilowatt hour is dependent on the amount of total kilowatt hours consumed. So,
+\[ x = 10^5 \left( 10 - \frac{p}{2} \right)\]
+Plugging in this formula for $x$ in $P$ we get,
+\[ P = \left( 10-\frac{10^5 \left( 10 - \frac{p}{2} \right)}{10^5} \right) \left( 10^5 \left( 10 - \frac{p}{2} \right) \right) = \frac{10^6p}{2} - \frac{10^5p^2}{4} \]
+Now we need to maximize $P$. The minimum price is $p = 4$, because then $x = 8 \times 10^5$ which is the maximum amount the company can produce. The maximum price is $p = 20$, because then $x = 0$, which is the minimum amount the company can produce. If $p = 4$, then $P = 1600000$ cents = $16000$\$. If $p = 20$, then $P = 0$\$. We also need to check the critical point.
+\[ \frac{dP}{dp} = \frac{10^6}{2} - \frac{10^5p}{2} \]
+The critical point is at $p = 10$. And when $p = 10$, then $P = 2500000$ cents =  $25000$\$. So the maximum profit is when price is equal to 10 cents.
+
+\subsection{Lecture 12}
+\subsubsection{2E-2}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2E-2.svg}
+    \label{fig:fig3}
+\end{figure}
+
+Let $x$ be the distance from the beacon to the shoreline, $y$ be a position of the spot of light of the beam on the shoreline and $\theta$ be an angle between perpendicular line from the beacon to the shoreline and the beam. Notice, that $x$ is constant and equals to $4$ miles, $y$ and $\theta$ are changing with respect to time $t$ measured in minutes. So, we have to find $\frac{dy}{dt}$ measured in miles per minute when the angle between the shoreline and the beam is $\frac{\pi}{3}$. If the angle between the shoreline and the beam is $\frac{\pi}{3}$, then $\theta = \frac{\pi}{6}$. Also, we are given $\frac{d\theta}{dt} = 3 = 6\pi$
+\[ \tan{\theta} = \frac{y}{4} \]
+Differentiating both sides we get,
+\[ \sec^2{\theta} \frac{d\theta}{dt} = \frac{1}{4} \frac{dy}{dt} \]
+\[ \frac{dy}{dt} = 4 \sec^2{\theta} \frac{d\theta}{dt} \]
+
+So, when $\theta = \frac{\pi}{6}$,
+\[ \frac{dy}{dt} \Big|_{\theta = \frac{\pi}{6}} = 4 \cdot \frac{4}{3} \cdot 6\pi = 32 \pi  \]
+
+\subsubsection{2E-3}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2E-3.svg}
+    \label{fig:fig4}
+\end{figure}
+Let $y$ be the distance from the cross point to the current position of the first boat, and $x$ is the distance from the cross point to the current position of the second boat. Then $D$ is the distance between them and $D^2 = x^2+y^2$.
+\[ \frac{d}{dt} D^2 = \frac{d}{dt} \left( x^2 + y^2 \right)\]
+\[ \frac{dD}{dt} = \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{D} \]
+We have to find $\frac{dD}{dt}$ when $x = 10$, $y = 15$, $\frac{dy}{dt} = 30$, $\frac{dx}{dt} = 30$ and $D = 5\sqrt{13}$,
+\[ \frac{dD}{dt} =  \frac{10\cdot30 + 15\cdot30}{5\sqrt{13}} = \frac{150}{\sqrt{13}}\]
+
+\newpage
+\subsubsection{2E-5}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2E-5.svg}
+    \label{fig:fig5}
+\end{figure}
+Let $x$ be the distance from the person to the point directly under the pulley, and $D$ is a length of the rope from the pulley to the person. We need to find $\frac{dx}{dt}$, given that $\frac{dD}{dt} = 4$, when $x = 20$ and $D = \sqrt{10^2 + 20^2} = 10\sqrt{5}$. Then,
+\[ D^2 = 100 + x^2 \]
+Differentiating both sides we get,
+\[ \frac{d}{dt} D^2 = \frac{d}{dt} \left( 100 + x^2 \right) \]
+\[ \frac{dx}{dt} = \frac{D\frac{dD}{dt}}{x} \]
+So evaluating at,
+\[ \frac{dx}{dt} = 2\sqrt{5} \]
+
+\subsubsection{2E-7}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{2E-7.svg}
+    \label{fig:fig6}
+\end{figure}
+\[ V = \frac{1}{2} \left( \frac{1}{2} + \frac{1}{2} + 2h \right)4h = 2h + 4h^2 \]
+\[ V' = 2h' + 8hh' \]
+\[ h' = \frac{V'}{2+8h}\]
+So $h' = \frac{1}{6}$ when $V' = 1$ and $h = \frac{1}{2}$
+
+\section{Part II}
+\subsection{Problem 1}
+\subsubsection{Problem 1-a}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem1.svg}
+    \label{fig:fig7}
+\end{figure}
+\[ \frac{y-a}{b} = \frac{a}{x-b} \Rightarrow y = \frac{ax}{x-b} \]
+\[ L = \sqrt{x^2 + y^2} = \sqrt{x^2 + \frac{a^2x^2}{(x-b)^2}} = \frac{x}{x-b}\sqrt{(x-b)^2+a^2}\]
+\[ \frac{dL}{dx} =  \frac{x}{\sqrt{(x-b)^2+a^2}} -\frac{b\sqrt{(x-b)^2+a^2}}{(x-b)^2}\]
+
+At the endpoints $x = b$ and $x = \infty$ the function $L$ goes to $\infty$, so the maximum must be in between at a critical point.
+
+\[ \frac{dL}{dx} = 0 \Rightarrow \frac{x}{\sqrt{(x-b)^2+a^2}} = \frac{b\sqrt{(x-b)^2+a^2}}{(x-b)^2} \Rightarrow x(x-b)^2 - b(x-b)^2 = a^2b \Rightarrow x = a^{2/3}b^{1/3} + b\]
+Evaluating L we get,
+\[ L = \frac{x}{x-b}\sqrt{(x-b)^2+a^2} = x \sqrt{1 + \frac{a^2}{(x-b)^2}} = x\sqrt{1 + \frac{a^2}{a^{4/3}b^{2/3}}} = x\sqrt{1+ \frac{a^{2/3}}{b^{2/3}}} \]
+Notice that $\frac{x}{b} = 1 + \frac{a^{2/3}}{b^{2/3}}$,
+
+\[ L = x\sqrt{1 + \frac{a^{2/3}}{b^{2/3}}} = x\sqrt{\frac{x}{b}} = \frac{x^{3/2}}{\sqrt{b}} = \frac{(a^{2/3}b^{1/3} + b)^{3/2}}{\sqrt{b}} = \frac{(b^{1/3}(a^{2/3} + b^{2/3}))^{3/2}}{\sqrt{b}} = (a^{2/3} + b^{2/3})^{3/2} \]
+
+\subsubsection{Problem 1-b}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem2.svg}
+    \label{fig:fig8}
+\end{figure}
+The time for the man to make to the point $C$ is given by the formula,
+
+\[ L = \frac{L_1}{3} + \frac{L_2}{6} \]
+
+The length $L_1$ is,
+\[ L_1 = 2\sqrt{r^2 - d^2} = 2\sqrt{1 - d^2}  = 2 \sqrt{1 - \sin^2{\theta}} = 2\cos{\theta}\]
+
+The length $L_2$ is,
+\[ L_2 = 2\theta \cdot r = 2\theta \]
+
+Then,
+\[ L = \frac{2\cos{\theta}}{3} + \frac{\theta}{3} \]
+
+Check endpoints. If $\theta = 0$, then $L = \frac{2}{3}$. If $\theta = \frac{\pi}{2}$, then $L = \frac{\pi}{6}$.
+Find the critical point of the function,
+
+\[ \frac{dL}{d\theta} = \frac{1}{3} - \frac{2\sin{\theta}}{3} \]
+
+\[ \frac{1}{3} - \frac{2\sin{\theta}}{3} = 0 \Rightarrow \theta = \frac{\pi}{6}\]
+
+If $\theta = \frac{\pi}{6}$, then $L = \frac{\sqrt{3}}{2}$. So the minimum is $L = \frac{2}{3}$ when $\theta = 0$. 
+
+\subsection{Problem 2}
+\[ x^{2/3} + y^{2/3} = 1 \]
+
+Let's rewrite the equation as a function $y$ in terms of $x$ in the first quadrant.
+\[ y = (1 - x^{2/3})^{3/2} \]
+
+The $h(x) = y'(a)(x-a) + y(a)$ is a function of the tangent line to the curve $y$ at an arbitrary point $a$.
+
+To find the derivative $y'$ we can use implicit differentiation,
+\[ \frac{d}{dx}(x^{2/3} + y^{2/3}) = \frac{d}{dx} 1 \]
+\[ \frac{dy}{dx} = -\frac{y^{1/3}}{x^{1/3}} = -\frac{(1-x^{2/3})^{1/2}}{x^{1/3}} \]
+
+So $h(x)$ is,
+\[ h(x) =  -\frac{(1-a^{2/3})^{1/2}}{a^{1/3}}(x-a) + (1-a^{2/3})^{3/2}\]
+
+The length of the portion of the tangent line is given by the formula,
+\[ L = \sqrt{h(0)^2 + x_1^2}\]
+For such $x_1$ that $h(x_1) = 0$.
+
+\[ h(0) = a^{2/3}(1-a^{2/3})^{1/2} + (1-a^{2/3})^{3/2} = (1-a^{2/3})^{1/2}(a^{2/3} + (1-a^{2/3})) = (1-a^{2/3})^{1/2}\]
+
+So $h(0) = (1-a^{2/3})^{1/2}$. Solve the equation $h(x) = 0$.
+
+\[ -\frac{(1-a^{2/3})^{1/2}}{a^{1/3}}(x-a) + (1-a^{2/3})^{3/2} = 0 \]
+\[ x = \frac{-a^{1/3}(1-a^{2/3})^{3/2}}{-(1-a^{2/3})^{1/2}}  + a \]
+\[ x = a^{1/3}(1-a^{2/3}) + a \]
+\[ x = a^{1/3}\]
+
+So, we can compute the length $L$,
+\[ L = \sqrt{\left((1-a^{2/3})^{1/2}\right)^2 + a^{2/3}} = \sqrt{(1-a^{2/3}) + a^{2/3}} = 1\]
+
+\subsection{Sensitivity of measurement, revisited.}
+\begin{tcolorbox}
+  Recall that in problem 2, PS1/Part II, \( L^2 + 20,000^2 = h^2 \). Use implicit differentiation
+  to calculate \( dL/dh \)
+\end{tcolorbox}
+
+\[ \frac{d}{dh} \left( L^2+20,000^2 \right) = \frac{d}{dh}h^2 \]
+\[ 2L\cdot \frac{dL}{dh} = 2h \]
+\[ \frac{dL}{dh} = \frac{h}{L} \]
+
+\begin{tcolorbox}
+  Compare the linear approximation \( dL/dh \) to the error \( \Delta L / \Delta h \) computed in
+  examples on PS1.
+\end{tcolorbox}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $h$ & $\Delta h$ & $\Delta L / \Delta h$ & $dL / dh$ & $\Delta L / \Delta h <= dL / dh$ \\ \hline
+    $25000$ & $1$ & $1.666607414$ & $1.666666667$ & True \\ \hline
+    $25000$ & $0.1$ & $1.666660741$ & $1.666666667$ & True \\ \hline
+    $25000$ & $0.01$ & $1.666666074$ & $1.666666667$ & True \\ \hline
+    $25000$ & $-0.01$ & $1.666667259$ & $1.666666667$ & False \\ \hline
+    $25000$ & $-0.1$ & $1.666672593$ & $1.666666667$ & False \\ \hline
+    $25000$ & $-1$ & $1.666725933$ & $1.666666667$ & False \\ \hline
+    $20001$ & $1$ & $82.84728347$ & $100.00375$ & True \\ \hline
+    $20001$ & $0.1$ & $97.62153854$ & $100.00375$ & True \\ \hline
+    $20001$ & $0.01$ & $99.75500156$ & $100.00375$ & True \\ \hline
+    $20001$ & $-0.01$ & $100.2549984$ & $100.00375$ & False \\ \hline
+    $20001$ & $-0.1$ & $102.6370585$ & $100.00375$ & False \\ \hline
+    $20001$ & $-1$ & $200.0025$ & $100.00375$ & False \\ \hline
+  \end{tabular}
+\end{center}
+
+\begin{tcolorbox}
+    Explain why \( \Delta L/\Delta h \leq dL/dh \) if the derivative is evaluated at the right endpoint of the interval of uncertainty (or, in other words, \( \Delta h > 0 \)).
+\end{tcolorbox}
+Let's find \( \frac{d^2L}{dh^2} \). 
+\[ \frac{d^2L}{dh^2} = \frac{L - \frac{h^2}{L}}{L^2} \]
+\par Since \( \frac{d^2L}{dh^2} < 0\), the graph is concave down. To show that we compute the limit of $\frac{d^2L}{dh^2}$ as $x \to 20000^+$ and $x \to \infty$ and show that $\frac{d^2L}{dh^2} \neq 0$. 
+\[ \lim_{x \to 20000^+} \frac{L - \frac{h^2}{L}}{L^2} = \frac{0^+ - \infty}{0^+} = -\infty \]
+\[ \lim_{x \to \infty} \frac{L - \frac{h^2}{L}}{L^2} = \lim_{x \to \infty} \frac{1 - \frac{h^2}{L^2}}{L} = \frac{1-1}{\infty} = 0 \]
+\par And in fact $\frac{d^2L}{dh^2} \neq 0$ because in that case $h^2$ would be equal to $L^2$ which is impossible. Below is a sketch of the concave down graph.
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem3.svg}
+    \label{fig:fig9}
+\end{figure}
+\par So the graph shows that when $\Delta h > 0$, then $dL/dh \geq \Delta L / \Delta h$ (i.e. the slope of the tangent line can't be smaller than the slope of the secant line).
+
+\begin{tcolorbox}
+    In what range of values of $h$ is it true that $|\Delta L| \leq 2|\Delta h|$.
+\end{tcolorbox}
+
+$|\Delta L| \leq 2|\Delta h|$ implies that $\frac{|\Delta L|}{|\Delta h|} \leq 2$. From the previous part we know that $\frac{\Delta L}{\Delta h} \leq \frac{dL}{dh}$ when $\Delta h > 0$. So, if $\frac{dL}{dh} \leq 2$, then $\frac{\Delta L}{\Delta h} \leq 2$. It means that we need to solve an equation $\frac{dL}{dh} \leq 2$.
+
+\[ \frac{h}{L} \leq 2 \]
+\[ h^2 \leq 4(h^2-20,000^2) \]
+\[ h^2 \geq \frac{4\cdot20,000^2}{3} \]
+\[ h \geq \frac{40,000}{\sqrt{3}} \]
+
+\par If $h = \frac{40000}{\sqrt{3}}$ then $\frac{dL}{dh} = 2$, and that means that $\Delta h$ must be greater than zero at these point, because otherwise $\frac{\Delta L}{\Delta h} < 2$. At other points $\Delta h$ can be negative but $h + \Delta h \geq \frac{40000}{\sqrt{3}}$ for the same reason. 
+
+\par Therefore $|\Delta L| \leq 2|\Delta h|$ is true if $h$ in range $\left[ 23094, \infty \right]$.
+
+\begin{tcolorbox}
+    Suppose that the Planet Quirk is a not only flat, but one-dimensional (a straight line). There are several
+    satellites at height $20,000$ kilometers and you get readings saying that satellite 1 is directly above the
+    point $x_1 \pm 10^{-10}$ and is at a distance $h_1 = 21,000 \pm 10^{-2}$ from you, satellite 2 is directly
+    above $x_2 \pm 10^{-10}$ and at a distance $h_2 = 52,000 \pm 10^{-2}$. Where are you and to what accuracy?
+    Hint: Consider separately the cases $x_1 < x_2$ and $x_2 < x_1$.
+\end{tcolorbox}
+Let $p$ be a point at which the person is located on the planet. Then $L_1$ is a distance from $p$ to $x_1$ and $L_2$ is a distance from $p$ to $x_2$.
+\[ L_1 = \sqrt{h_1^2 - 20,000^2} \approx 6403 \]
+\[ L_2 = \sqrt{h_2^2 - 20,000^2} = 48000 \]
+
+\par The error in our measurements is $\Delta L$, which is $\Delta L \approx \frac{dL}{dh} \Delta h$. So,
+\[ \Delta L_1 = \frac{h_1}{L_1} \Delta h_1 = \frac{21000}{6403} \cdot \pm 0.01 \approx \pm 0.03 \]
+\[ \Delta L_2 = \frac{h_2}{L_2} \Delta h_2 = \frac{52000}{48000} \cdot \pm 0.01  \approx \pm 0.01 \]
+
+Let's consider the case $x_1 < x_2$. We are closer to $x_1$, so there are two subcases $p < x_1 < x_2$ and $x_1 < p < x_2$.
+In the former case
+\[p = x_1 - L_1 \pm (10^{-10} + 0.03) \]
+\[ p = x_2 - L_2 \pm (10^{-10} + 0.01) \]
+\par In the latter case
+\[ p = x_1 + L_1 \pm (10^{-10} + 0.03) \]
+\[ p = x_2 - L_2 \pm (10^{-10} + 0.01) \]
+
+\par Let's consider the case $x_2 < x_1$. We are closer to $x_1$, so there are to subcases $x_2 < p < x_1$ and $x_2 < x_1 < p$. In the former case
+\[p = x_1 - L_1 \pm (10^{-10} + 0.03) \]
+\[p = x_2 + L_2 \pm (10^{-10} + 0.01) \]
+\par In the latter case
+\[ p = x_1 + L_1 \pm (10^{-10} + 0.03)\]
+\[ p = x_2 + L_2 \pm (10^{-10} + 0.01) \]
+
+\newpage
+\begin{tcolorbox}
+    Express $dL/dh$ in terms of the angle between the line of sight to the satellite and the horizontal from the person on the ground. (When expressed using the line-of-sight angle, the formula also works for a curved planet like Earth.)
+\end{tcolorbox}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem3-1.svg}
+    \label{fig:fig10}
+\end{figure}
+Since we found $dL/dh = h/L$ using implicit differentiation, then $dL/dh$ in terms of $\theta$ should be $\sec{\theta}$.
+
+\newpage
+\subsection{More sensitivity of measurement.}
+\begin{tcolorbox}
+    Consider a parabolic mirror with equation $y = -1/4 + x^2$ and focus at the origin. (See Problem Set 1.) A ray of light traveling down vertically along the line $x = a$ hits the mirror at the point $(a, b)$ where $b = -1/4+a^2$ and goes to the origin along a ray at angle $\theta$ measured from the positive $x$-axis.
+    \par a) Find the formula for $\tan{\theta}$ in terms of $a$ and $b$, and calculate $d\theta/da$ using implicit differentiation. (Express your answer in terms of $a$ and $\theta$.)
+\end{tcolorbox}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem4.svg}
+    \label{fig:fig11}
+\end{figure}
+
+\[ \tan{\theta} = \frac{b}{a} \]
+\[ \frac{d}{da} \left( \tan{\theta} \right) = \frac{d}{da} \left( \frac{b}{a} \right) \]
+\[ \sec^2{\theta} \frac{d\theta}{da} = \frac{\frac{db}{da}a - b}{a^2} \]
+\[ \frac{d\theta}{da} = \frac{2a^2 + 1/4 - a^2}{a^2\sec^2{\theta}} = \frac{a^2+1/4}{a^2\sec^2{\theta}} \]
+
+\newpage
+\begin{tcolorbox}
+    b) If the telescope records a star at $\theta = -\pi/6$ and the measurement is accurate to $10^{-3}$ radians, use part (a) to give an estimate as to the location of the star in the variable $a$.
+\end{tcolorbox}
+If $\theta = -\pi/6$, then
+\[ \frac{b}{a} = -\frac{\sqrt{3}}{3} \Rightarrow 3a^2 + \sqrt{3}a - \frac{3}{4} = 0 \]
+\par Solving the equation above we get $a = \frac{1}{2\sqrt{3}}$ (ignore negative $a$). If $\theta$ is a function in terms of $a$, then error in $\theta$ is approximately $\Delta \theta \approx \frac{d\theta}{da}\Delta a \Rightarrow \Delta a \approx \Delta \theta / \frac{d\theta}{da}$. Hence,
+
+\[ \frac{d\theta}{da} = \frac{(1/2\sqrt{3})^2 + 1/4}{(1/2\sqrt{3})^2\sec^2{(-\pi/6)}} = 3 \]
+
+So, if $\Delta \theta = 10^{-3}$, then $\Delta a \approx 10^{-3}/3$. Hence, the location of the start in the variable $a$ is approximately $\frac{1}{2\sqrt{3}} \pm 10^{-3}/3$ 
+
+\begin{tcolorbox}
+    (optional; no credit) Solve for $a$ as a function of $\theta$ alone and doublecheck your answers to parts (a) and (b).
+\end{tcolorbox}
+Let $h$ be \textit{hypotenuse}, then from Pythagorean theorem
+\[ h^2 = a^2 + \left(-1/4 + a^2\right)^2 \Rightarrow h = a^2 + 1/4\]
+
+Then
+\[ \sin{\theta} = \frac{a^2 - 1/4}{a^2 + 1/4} \]
+\[ a = \frac{1}{2}\sqrt{\frac{1 + \sin{\theta}}{1-\sin{\theta}}} \]
+\[ \frac{da}{d\theta} = \frac{\cos{\theta}}{2\sqrt{\frac{1 + \sin{\theta}}{1 - \sin{\theta}}}(1 - \sin{\theta})^2} \]
+If $\theta = -\pi/6$, then $a = \frac{1}{2\sqrt{3}}$, $\frac{da}{d\theta} = 1/3$, $\Delta a \approx \frac{da}{d\theta}\Delta \theta = 10^{-3}/3$. Hence, $a \approx \frac{1}{2\sqrt{3}} \pm 10^{-3}/3$.
+
+\newpage
+\subsection{Newton’s method.}
+\begin{tcolorbox}
+    a) Compute the cube root of 9 to 6 significant figures using Newton’s method. Give the general formula, and list numerical values, starting with $x_0 = 2$. At what iteration $k$ does the method surpass the accuracy of your calculator or computer? (Display your answers to the accuracy of your calculator or computer.)
+    \par b) For each step $x_k$, $k = 0, 1, \dots,$ say whether the value is i) larger or smaller than $9^{1/3}$; ii) larger or smaller than the preceding value $x_{k-1}$. Illustrate on the graph of $x^3 - 9$ why this is so.
+\end{tcolorbox}
+If $x = \sqrt[3]{9}$, then $f(x) = x^3-9$ and $f'(x) = 3x^2$. So,
+\[ x_k = x_{k-1} - \frac{f(x_{k-1})}{f'(x_{k-1})} \]
+
+According to my calculator $x = \sqrt[3]{9} \approx 2.080084$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    $k$ & $x_k$ & $(i)$ & $(ii)$ \\ \hline
+    $0$ & $2$ & smaller & - \\ \hline
+    $1$ & $2.083333$ & larger & larger \\ \hline
+    $2$ & $2.080089$ & larger & smaller \\ \hline
+    $3$ & $2.080084$ & same & smaller \\ \hline
+\end{tabular}
+\end{center}
+So using the Newton method the accuracy of the answer is the same as the calculator's accuracy at $k = 3$.
+
+\begin{tcolorbox}
+    c) Find a quadratic approximation to $9^{1/3}$, and estimate the difference between the quadratic approximation and the exact answer. (Hint: To get a reasonable quadratic approximation, use $9 = 8(1 + 1/8)$.)
+\end{tcolorbox}
+To find a quadratic approximation to $9^{1/3}$ we could approximate function $f(x) = 2(1+x)^{1/3}$ at $x \approx 0$. So,
+\[ f'(x) = \frac{2}{3}(1+x)^{-1/6} \]
+\[ f''(x) = -\frac{1}{9}(1+x)^{-2/3} \]
+\[ f(x) \approx f(0) + f'(0)x + \frac{f''(0)}{2}x^2 = 2 + \frac{2}{3}x - \frac{1}{18}x^2\]
+\[ f(1/18) \approx 2 + \frac{1}{12} - \frac{1}{1152} = 2.082465 \]
+So, the difference between quadratic approximation and the exact number is $|2.082465 - 2.080084| \approx 3 \times 10^{-3}$.
+
+\newpage
+\subsection{Hypocycloid, again.}
+\begin{tcolorbox}
+    Here we derive the equation for the hypocycloid of Problem 2 from the sweeping out property directly. This takes quite a bit longer. We will look at the hypocycloid from yet another (easier) point of view later on.
+    \\ \par Think of the first quadrant of the $xy$-plane as representing the region to the right of a wall with the ground as the positive $x$-axis and the wall as the positive $y$-axis. A unit length ladder is placed vertically against the wall. The bottom of the ladder is at $x = 0$ and slides to the right along the $x$-axis until the ladder is horizontal. At the same time, the top of the ladder is dragged down the $y$-axis ending at the origin $(0, 0)$. We are going to describe the region swept out by this motion, in other words, the blurry region formed in a photograph of the motion if the eye of the camera is open the whole time. 
+    \\ \par a) Suppose that $L_1$ is the line segment from $(0, y_1)$ to $(x_1, 0)$ and $L_2$ is the line segment from $(0, y_2)$ to $(x_2, 0)$. Find the formula for the point of intersection $(x_3, y_3)$ of the two line segments. Don’t expect the formula to be simple: It must involve all four parameters $x_1$, $x_2$, $y_1$, and $y_2$. But simplify as much as possible!
+\end{tcolorbox}
+\begin{figure}[htp!]
+    \centering
+    \includesvg{problem6.svg}
+    \label{fig:fig12}
+\end{figure}
+\newpage
+We have a system of linear equations.
+\[ y_3 = -\frac{y_1}{x_1}x_3 + y_1 \]
+\[ y_3 = -\frac{y_2}{x_2}x_3 + y_2 \]
+
+Solving for $y_3$ and $x_3$ we get
+\[ x_3 = \frac{y_2 - y_1}{y_2/x_2-y_1/x_1} \]
+\[ y_3 = \frac{x_1 - x_2}{x_1/y_1 - x_2/y_2}\]
+
+\begin{tcolorbox}
+    b) Write the equation involving $x_2$ and $y_2$ that expresses the property that ladder $L_2$ has length one. We will suppose that $L_1$ represents the ladder at a fixed position, and $L_2$ tends to $L_1$. Thus
+    \[ x_2 = x_1 + \Delta x; \quad y_2 = y_1 + \Delta y \]
+    Use implicit differentiation (related rates) to find
+    \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \]
+    (Express the limit as a function of the fixed values $x_1$ and $y_1$.)
+\end{tcolorbox}
+\par If $L_2$ has length one, then
+\[ x_2^2 + y_2^2 = 1 \]
+\par Thus, the general equation expressed in $x$ and $y$ is
+\[ x^2 + y^2 = 1 \]
+\par By using implicit differentiation we can find $dy/dx$
+\[ \frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = -\frac{x}{y} \]
+\par If we need the derivative at point $x_1$ we have
+\[ \frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}  = -\frac{x_1}{y_1}\]
+
+\begin{tcolorbox}
+    c) Substitute $x_2 = x_1 + \Delta x$ and $y_2 = y_1 + \Delta y$ into the formula in part (a) for $x_3$ and use part (b) to compute
+    \[ X = \lim_{x_2 \to x_1} x_3 = \lim_{\Delta x \to 0} x_3  \]   Simplify as much as possible. Deduce, by symmetry alone, the formula for
+    \[Y = \lim_{x_2 \to x_1} y_3\]
+\end{tcolorbox}
+\[ x_3 = \frac{y_2 - y_1}{y_2/x_2 - y_1/x_1} = \frac{x_1x_2(y_2-y_1)}{x_1y_2 - x_2y_1} = \frac{\Delta y \cdot x_1 \cdot (x_1 + \Delta x)}{x_1 \Delta y - y_1\Delta x} = \frac{\Delta y}{\Delta x} \cdot \left( \frac{x_1(x_1 + \Delta x)}{x_1\frac{\Delta y}{\Delta x} - y_1} \right) \]
+\[ X = \lim_{\Delta x \to 0} \left[ \frac{\Delta y}{\Delta x} \cdot \left( \frac{x_1(x_1 + \Delta x)}{x_1\frac{\Delta y}{\Delta x} - y_1} \right) \right] = -\frac{x_1}{y_1} \cdot \frac{x_1^2}{-\frac{x_1^2}{y_1} - y_1} = \frac{-x_1^3}{-x_1^2 - y_1^2} = \frac{x_1^3}{x_1^2 + y_1^2} \]
+
+Since $x^2 + y^2 = 1$, then $x_1^2 + y_1^2 = 1$. Hence, $X = x_1^3$. Similarly, by symmetry $Y = y_1^3$.
+
+\begin{tcolorbox}
+    d) Show that $X^{2/3}+Y^{2/3} = 1$. (The limit point $(X, Y)$ that you found in part (c) is expressed as a function of $x_1$ and $y_1$. This is the unique point of the ladder $L_1$ that is also part of the boundary curve of the region swept out by the family of ladders.)
+\end{tcolorbox}
+\[ X^{2/3}+Y^{2/3} = \left( x_1^2 \right)^{2/3} + \left( y_1^2 \right)^{2/3} = x_1^2 + y_1^2 = 1 \]
+\end{document}
